@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
-import "../../"
+import "../../../"
 
 Item {
     id: root
@@ -62,14 +62,14 @@ Item {
         }
 
         Text {
-            text: "USING SOSHELL_" + Config.shellVersion
+            text: "USING SOSHELL_" + Config.shellVersion + "a"
             font.pointSize: 7
             font.family: "MartianMono Nerd Font"
             color: "white"
             renderType: Text.NativeRendering
         }
 
-	Text {
+        Text {
             text: "USING DUSQKRNL_7.3.0b"
             font.pointSize: 7
             font.family: "MartianMono Nerd Font"
@@ -78,7 +78,7 @@ Item {
         }
 
         Image {
-            source: Quickshell.shellPath("assets/small_info_rects.svg")
+            source: Quickshell.shellPath("assets/bg/small_info_rects.svg")
         }
     }
 }

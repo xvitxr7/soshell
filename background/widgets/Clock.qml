@@ -8,10 +8,10 @@ PanelWindow {
     anchors.top: true
     anchors.left: true
 
-    margins.left: 1460
+    margins.left: 1440
     margins.top: 70
 
-    width: 350
+    width: 370
     height: rootLayout.height
 
     aboveWindows: false 
@@ -32,6 +32,10 @@ PanelWindow {
             font.family: "Medium"
 
             color: "white"
+
+            transform: Scale {
+                xScale: root.width / time.width
+            }
         }
 
         Text {
@@ -43,7 +47,7 @@ PanelWindow {
             color: "white"
 
             transform: Scale {
-                xScale: 340 / date.width
+                xScale: root.width / date.width
             }
         }
     }

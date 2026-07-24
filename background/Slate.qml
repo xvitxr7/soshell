@@ -6,7 +6,7 @@ Image {
 
     property int slateId: 1
 
-    source: Quickshell.shellPath("assets/slate_" + slateId + ".svg")
+    source: Quickshell.shellPath("assets/bg/slate_" + slateId + ".svg")
 
     opacity: mouse.containsMouse ? 1 : 0.92
     Behavior on opacity {

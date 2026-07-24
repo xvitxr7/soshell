@@ -3,22 +3,13 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
 
-PanelWindow {
+Item {
     id: root
 
-    anchors {
-        left: true
-        right: true
-        bottom: true
-        top: true
-    }
-    
+    x: parent.width / 2 - width / 2
+
     width: rootLayout.width
     height: rootLayout.height
-
-    aboveWindows: false
-
-    color: "transparent"
 
     Timer {
         interval: 5000
@@ -47,7 +38,7 @@ PanelWindow {
             Layout.alignment: Qt.AlignHCenter
             FileView {
                 id: messagesFile
-                path: Quickshell.shellPath("assets/messages")
+                path: Quickshell.shellPath("assets/txt/messages")
                 blockLoading: true
             }
 
@@ -70,21 +61,21 @@ PanelWindow {
             FileView {
                 id: greetMessagesFile
                 property list<string> lines: text().split("\n")
-                path: Quickshell.shellPath("assets/greets")
+                path: Quickshell.shellPath("assets/txt/greets")
                 blockLoading: true
             }
 
             FileView {
                 id: greetEveningFile
                 property list<string> lines: text().split("\n")
-                path: Quickshell.shellPath("assets/greets_evening")
+                path: Quickshell.shellPath("assets/txt/greets_evening")
                 blockLoading: true
             }
 
             FileView {
                 id: greetMorningFile
                 property list<string> lines: text().split("\n")
-                path: Quickshell.shellPath("assets/greets_morning")
+                path: Quickshell.shellPath("assets/txt/greets_morning")
                 blockLoading: true
             }
 

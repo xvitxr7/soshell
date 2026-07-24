@@ -68,7 +68,7 @@ PanelWindow {
         // big logo!
         RowLayout {
             Image {
-                source: Quickshell.shellPath("assets/sos_logo.svg")
+                source: Quickshell.shellPath("assets/bg/sos_logo.svg")
             }
         }
 
@@ -77,7 +77,7 @@ PanelWindow {
         RowLayout {
             Layout.bottomMargin: -90
             Image {
-                source: Quickshell.shellPath("assets/third_party_lineup1.svg")
+                source: Quickshell.shellPath("assets/bg/third_party_lineup1.svg")
             } 
 
             SmallInfo {}
@@ -85,7 +85,7 @@ PanelWindow {
             Image {
 		    Layout.leftMargin: -30
                 Layout.alignment: Qt.AlignBottom
-                source: Quickshell.shellPath("assets/third_party_lineup2.svg")
+                source: Quickshell.shellPath("assets/bg/third_party_lineup2.svg")
             }
         }
     } 

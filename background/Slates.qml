@@ -1,19 +1,8 @@
 import QtQuick
 import Quickshell
 
-PanelWindow {
+Item {
     id: root
-
-    aboveWindows: false
-
-    anchors {
-        top: true
-        bottom: true
-        left: true
-        right: true
-    }
-
-    color: "transparent"
 
     Slate {
         x: 42

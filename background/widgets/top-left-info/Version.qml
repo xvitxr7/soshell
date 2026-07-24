@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell
 import QtQuick.Layouts
-import "../../" as Root
+import "../../../" as Root
 
 Item {
     id: root
@@ -23,11 +23,11 @@ Item {
         }
 
         Image {
-            source: Root.Config.release == "alpha" ? Quickshell.shellPath("assets/alpha_emblem.svg") : ""
+            source: Root.Config.release == "alpha" ? Quickshell.shellPath("assets/bg/alpha_emblem.svg") : ""
         }
 
         Image {
-            source: Quickshell.shellPath("assets/2026.svg")
+            source: Quickshell.shellPath("assets/bg/2026.svg")
         }
     }
 }
