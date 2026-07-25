@@ -1,0 +1,2 @@
+# soshell
+SanctuaryOS Shell
