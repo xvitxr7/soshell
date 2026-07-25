@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Window
 import Quickshell
 import Qt5Compat.GraphicalEffects
 
@@ -16,15 +17,12 @@ Item {
 
         radius: 5
 
-        border.color: "#7190c6"
-        border.width: 2
-
         color: "transparent"
 
         layer.enabled: true
         layer.effect: OpacityMask {
             maskSource: Rectangle {
-                width: borderMask.width
+                width:  borderMask.width
                 height: borderMask.height
                 radius: borderMask.radius
             }
@@ -35,6 +33,8 @@ Item {
             height: parent.height
 
             source: Quickshell.env("HOME") + "/.face"
+            sourceSize.width: width * Screen.devicePixelRatio
+
             cache: false
             antialiasing: true
             asynchronous: true
@@ -48,7 +48,7 @@ Item {
 
         radius: 5
 
-        border.color: "#7190c6"
+        border.color: "#9ba9cf"
         border.width: 2
 
         color: "transparent"

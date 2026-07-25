@@ -15,7 +15,7 @@ PanelWindow {
     }
 
     margins.left: 46
-    margins.top: 80
+    margins.top: 80 - 40 // 40 being the top bar height
 
     width: rootLayout.width
     height: 400
@@ -78,7 +78,7 @@ PanelWindow {
             Layout.bottomMargin: -90
             Image {
                 source: Quickshell.shellPath("assets/bg/third_party_lineup1.svg")
-            } 
+            }
 
             SmallInfo {}
 
@@ -88,5 +88,5 @@ PanelWindow {
                 source: Quickshell.shellPath("assets/bg/third_party_lineup2.svg")
             }
         }
-    } 
+    }
 }

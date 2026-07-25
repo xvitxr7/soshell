@@ -1,4 +1,5 @@
 import QtQuick
+import QtMultimedia
 import Quickshell
 import "widgets" as Widgets
 import "user-slate" as UserSlate
@@ -6,6 +7,8 @@ import "widgets/top-left-info" as TopLeftInfo
 
 PanelWindow {
     id: root
+
+    margins.top: -40
 
     aboveWindows: false
     anchors {
@@ -17,7 +20,7 @@ PanelWindow {
 
     color: "transparent"
 
-    // animated halftone 
+    // animated halftone
     CustomShaderBackground {}
 
     Widgets.Greet {}
@@ -28,4 +31,11 @@ PanelWindow {
     Slates {}
 
     UserSlate.User {}
+
+    Video {
+        id: video
+        width : 800
+        height : 600
+        source: Quickshell.shellPath("assets/bg/animald00ds.mov")
+    }
 }

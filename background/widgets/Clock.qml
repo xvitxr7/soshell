@@ -9,12 +9,12 @@ PanelWindow {
     anchors.left: true
 
     margins.left: 1440
-    margins.top: 70
+    margins.top: 70 - 40
 
     width: 370
     height: rootLayout.height
 
-    aboveWindows: false 
+    aboveWindows: false
     color: "transparent"
 
     SystemClock {
