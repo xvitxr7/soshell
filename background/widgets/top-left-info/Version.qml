@@ -19,7 +19,6 @@ Item {
             font.pointSize: Theme.s(14.7)
             color: "white"
             antialiasing: false
-            renderType: Text.CurveRendering
         }
 
         Image {

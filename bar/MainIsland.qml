@@ -7,8 +7,8 @@ import "../common"
 Item {
     id: root
 
-    width: 100
-    height: 25
+    width: Theme.s(120)
+    height: Theme.s(30)
 
     RowLayout {
         id: rootLayout
@@ -17,21 +17,21 @@ Item {
         Rectangle {
             id: clockRoot
 
-            implicitWidth: 100
+            implicitWidth: root.width
             implicitHeight: root.height
             radius: 5
 
             color: "#263754"
 
             Text {
-                anchors.centerIn: parent
+                anchors.horizontalCenter: parent.horizontalCenter
                 SystemClock {
                     id: clock
                 }
 
                 text: Qt.formatDateTime(clock.date, "hh•mm")
                 font.family: "Medium"
-                font.pointSize: 15
+                font.pointSize: Theme.s(20)
                 color: "white"
             }
 
@@ -46,16 +46,16 @@ Item {
 
             Tooltip {
                 id: tooltip
-                x: 1060
-                implicitWidth: 300
-                implicitHeight: 40
+                implicitWidth: Theme.s(300)
+                implicitHeight: Theme.s(40)
                 bgColor: "#263754"
                 Text {
                     x: parent.width / 2 - width / 2
-                    y: 18
+                    y: 15
                     text: Qt.formatDateTime(clock.date, "dddd. MMMM dd yyyy")
                     color: "white"
                     font.family: "Medium"
+                    font.pointSize: Theme.s(10)
                 }
             }
         }

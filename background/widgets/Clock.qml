@@ -42,8 +42,9 @@ PanelWindow {
         Text {
             id: date
             text: Qt.formatDateTime(sysClock.date, "dddd dd MMMM")
+            font.family: Fonts.medium.font.family
             font.pointSize: 13
-            font.family: "Medium"
+            renderType: Text.CurveRendering
 
             color: "white"
 

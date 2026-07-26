@@ -2,12 +2,13 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
+import "../common"
 
 Item {
     id: root
 
     width: bg.width
-    height: 25
+    height: Theme.s(30)
 
     Rectangle {
         id: bg
@@ -15,7 +16,7 @@ Item {
         radius: 5
 
         width: rootLayout.width + 20
-        height: rootLayout.height + 10
+        height: parent.height
     }
 
     RowLayout {
