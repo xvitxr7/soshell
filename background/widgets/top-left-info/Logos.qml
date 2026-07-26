@@ -65,13 +65,17 @@ Item {
 
         RowLayout {
             id: info
+<<<<<<< HEAD
             Layout.preferredHeight: lineup1.height
+=======
+>>>>>>> 4a99b84 (try to fix scaling with these layouts...)
             spacing: Theme.s(10)
 
             Image {
                 id: lineup1
                 Layout.preferredWidth: Theme.s(228.7)
                 Layout.preferredHeight: Theme.s(67)
+
                 source: Quickshell.shellPath("assets/bg/third_party_lineup1.svg")
             }
 

@@ -9,7 +9,7 @@ Item {
 
     Layout.alignment: Qt.AlignTop
 
-    width: rootLayout.width
+    width: rootLayout.width / 1.2
     height: rootLayout.height
 
     ColumnLayout {
@@ -80,6 +80,8 @@ Item {
         }
 
         Image {
+            Layout.preferredWidth: Theme.s(141)
+            Layout.preferredHeight: Theme.s(10)
             source: Quickshell.shellPath("assets/bg/small_info_rects.svg")
         }
     }
