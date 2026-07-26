@@ -9,7 +9,7 @@ Item {
 
     RowLayout {
         id: layoutRoot
-        spacing: Theme.s(8)
+        spacing: Theme.s(6)
 
         Text {
             id: versionText

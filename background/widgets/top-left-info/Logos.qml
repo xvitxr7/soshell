@@ -66,6 +66,7 @@ Item {
         RowLayout {
             id: info
             Layout.preferredHeight: lineup1.height
+            spacing: Theme.s(10)
 
             Image {
                 id: lineup1
@@ -77,8 +78,8 @@ Item {
             SmallInfo {}
 
             Image {
-                Layout.preferredWidth: Screen.width * 0.2
-                Layout.preferredHeight: Screen.height * 0.015
+                Layout.preferredWidth: Theme.s(447)
+                Layout.preferredHeight: Theme.s(20)
                 Layout.alignment: Qt.AlignBottom
 
                 source: Quickshell.shellPath("assets/bg/third_party_lineup2.svg")
