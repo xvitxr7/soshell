@@ -60,7 +60,7 @@ Item {
         }
 
         Version {
-            Layout.topMargin: Theme.s(-40)
+            Layout.topMargin: Theme.s(-20)
         }
 
         RowLayout {

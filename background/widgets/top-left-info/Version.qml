@@ -9,13 +9,14 @@ Item {
 
     RowLayout {
         id: layoutRoot
-        spacing: 10
+        spacing: Theme.s(8)
 
         Text {
             id: versionText
 
             text: "VERSION " + Config.version
             font.family: "Medium"
+            font.pointSize: Theme.s(14.7)
             color: "white"
             antialiasing: false
             renderType: Text.CurveRendering
