@@ -54,9 +54,8 @@ Item {
         // big logo!
         Image {
             id: logo
-            fillMode: Image.PreserveAspectFit
-            Layout.topMargin: Theme.s(-20)
             Layout.preferredWidth: Theme.s(530)
+            Layout.preferredHeight: Theme.s(87)
             source: Quickshell.shellPath("assets/bg/sos_logo.svg")
         }
 
@@ -66,7 +65,6 @@ Item {
 
         RowLayout {
             id: info
-            Layout.topMargin: Theme.s(-10)
             Layout.preferredHeight: lineup1.height
 
             Image {
