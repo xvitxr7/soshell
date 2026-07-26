@@ -22,7 +22,6 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-        spacing: Theme.s(-15)
 
         Text {
             id: hostNameGreet
@@ -56,17 +55,18 @@ Item {
         Image {
             id: logo
             fillMode: Image.PreserveAspectFit
+            Layout.topMargin: Theme.s(-20)
             Layout.preferredWidth: Theme.s(530)
             source: Quickshell.shellPath("assets/bg/sos_logo.svg")
         }
 
         Version {
-            Layout.topMargin: Theme.s(-15)
+            Layout.topMargin: Theme.s(-40)
         }
 
         RowLayout {
             id: info
-            Layout.topMargin: 15
+            Layout.topMargin: Theme.s(-10)
             Layout.preferredHeight: lineup1.height
 
             Image {
