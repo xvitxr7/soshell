@@ -22,6 +22,11 @@ PanelWindow {
         anchors.bottom: parent.bottom
 
         Workspaces {}
-        MainIsland {}
+        Clock {}
+
+        Loader {
+            id: batteryIslandLoader
+            source: Config.hasBattery ? "Battery.qml" : null
+        }
     }
 }
