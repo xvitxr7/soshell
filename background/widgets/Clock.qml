@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import "../../common"
 
 PanelWindow {
     id: root
@@ -8,10 +9,10 @@ PanelWindow {
     anchors.top: true
     anchors.left: true
 
-    margins.left: 1440
-    margins.top: 70 - 40
+    margins.left: Theme.s(1440)
+    margins.top: Theme.s(70) - Config.barHeight
 
-    width: 370
+    width: Theme.s(370)
     height: rootLayout.height
 
     aboveWindows: false
@@ -28,7 +29,7 @@ PanelWindow {
         Text {
             id: time
             text: Qt.formatDateTime(sysClock.date, "hh•mm•ss")
-            font.pointSize: 40
+            font.pointSize: Theme.s(40)
             font.family: "Medium"
 
             color: "white"

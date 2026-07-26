@@ -22,7 +22,7 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-        spacing: -8
+        spacing: Theme.s(-15)
 
         Text {
             id: hostNameGreet
@@ -61,7 +61,7 @@ Item {
         }
 
         Version {
-            Layout.topMargin: -10
+            Layout.topMargin: Theme.s(-15)
         }
 
         RowLayout {

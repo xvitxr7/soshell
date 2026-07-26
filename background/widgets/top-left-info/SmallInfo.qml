@@ -14,7 +14,7 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-        spacing: 3
+        spacing: Theme.s(2)
 
         property real fontSize: Theme.s(7)
 
@@ -39,7 +39,7 @@ Item {
 
             text: uptimeProcess.result.toUpperCase().trim() // slice to remove random comma
             font.pointSize: rootLayout.fontSize
-            font.family: "MartianMono Nerd Font"
+            font.family: "MartianMono Nerd Font Propo"
             color: "white"
             renderType: Text.NativeRendering
 
@@ -58,7 +58,7 @@ Item {
 
             text: "POWERED_BY QSHELL_" + versionProcess.result.split(" ")[1]
             font.pointSize: rootLayout.fontSize
-            font.family: "MartianMono Nerd Font"
+            font.family: "MartianMono Nerd Font Propo"
             color: "white"
             renderType: Text.NativeRendering
         }
@@ -66,7 +66,7 @@ Item {
         Text {
             text: "USING SOSHELL_" + Config.shellVersion + "a"
             font.pointSize: rootLayout.fontSize
-            font.family: "MartianMono Nerd Font"
+            font.family: "MartianMono Nerd Font Propo"
             color: "white"
             renderType: Text.NativeRendering
         }
@@ -74,7 +74,7 @@ Item {
         Text {
             text: "USING DUSQKRNL_7.3.0b"
             font.pointSize: rootLayout.fontSize
-            font.family: "MartianMono Nerd Font"
+            font.family: "MartianMono Nerd Font Propo"
             color: "white"
             renderType: Text.NativeRendering
         }
