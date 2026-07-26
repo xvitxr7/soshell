@@ -33,8 +33,8 @@ Item {
                 property bool isActive: mouse.containsMouse || (Hyprland.focusedWorkspace && Hyprland.focusedWorkspace.id === wsId)
                 property bool isOccupied: wsData !== undefined
 
-                implicitWidth: isActive ? 15 : 12
-                implicitHeight: isActive ? 15 : 12
+                implicitWidth: Theme.s(isActive ? 15 : 12)
+                implicitHeight: Theme.s(isActive ? 15 : 12)
 
                 Behavior on implicitWidth {
                     NumberAnimation { duration: 150; easing.type: Easing.InOutQuad }
@@ -65,12 +65,11 @@ Item {
 
                     text: bounds.wsId
                     font.family: "Medium"
-                    font.pointSize: 10
+                    font.pointSize: Theme.s(10)
                     color: "white"
-                    renderType: Text.CurveRendering
 
                     transform: Scale {
-                        xScale: 13 / workspaceId.width
+                        xScale: Theme.s(13) / workspaceId.width
                     }
                 }
 

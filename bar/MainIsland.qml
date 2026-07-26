@@ -7,7 +7,7 @@ import "../common"
 Item {
     id: root
 
-    width: Theme.s(120)
+    width: Theme.s(100)
     height: Theme.s(30)
 
     RowLayout {
@@ -32,7 +32,7 @@ Item {
 
                 text: Qt.formatDateTime(clock.date, "hh•mm")
                 font.family: "Medium"
-                font.pointSize: Theme.s(20)
+                font.pointSize: Theme.s(15)
                 color: "white"
             }
 
@@ -56,7 +56,7 @@ Item {
                     text: Qt.formatDateTime(clock.date, "dddd. MMMM dd yyyy")
                     color: "white"
                     font.family: "Medium"
-                    font.pointSize: Theme.s(10)
+                    font.pointSize: Theme.s(8)
                 }
             }
         }
