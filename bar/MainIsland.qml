@@ -19,12 +19,13 @@ Item {
 
             implicitWidth: root.width
             implicitHeight: root.height
-            radius: 5
+            radius: Theme.s(8)
 
             color: "#263754"
 
             Text {
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.centerIn: parent
+
                 SystemClock {
                     id: clock
                 }

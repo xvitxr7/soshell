@@ -8,7 +8,7 @@ Item {
     id: root
 
     x: parent.width / 2 - width / 2
-    y: Theme.s(114)
+    y: Theme.s(70)
 
     width: rootLayout.width
     height: rootLayout.height
@@ -49,7 +49,8 @@ Item {
             id: randomMessage
 
             text: messages[Math.floor(Math.random() * (messages.length - 1))]
-            font.family: "Adwaita Sans"
+            font.family: Fonts.inter.font.family
+            font.pointSize: Theme.s(16)
             color: "white"
         }
 
@@ -101,7 +102,7 @@ Item {
             Component.onCompleted: greets = greetOnTimeOfDay()
 
             text: applyFormat(greets[Math.floor(Math.random() * (greets.length - 1))])
-            font.pointSize: Screen.width * 0.02
+            font.pointSize: Theme.s(50)
             font.family: "Adwaita Sans"
             font.weight: 500
             renderType: Text.NativeRendering
