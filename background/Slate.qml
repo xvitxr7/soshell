@@ -1,8 +1,11 @@
 import Quickshell
 import QtQuick
 
+import "../common"
+
 Image {
     id: root
+
 
     property int slateId: 1
 
@@ -17,5 +20,9 @@ Image {
         id: mouse
         anchors.fill: parent
         hoverEnabled: true
+    }
+
+    transform: Scale {
+        xScale: Theme.currentScale; yScale: Theme.currentScale
     }
 }

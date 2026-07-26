@@ -1,14 +1,13 @@
 import QtQuick
+import QtQuick.Layouts
 import QtMultimedia
 import Quickshell
 import "widgets" as Widgets
-import "user-slate" as UserSlate
 import "widgets/top-left-info" as TopLeftInfo
+import "../common"
 
 PanelWindow {
     id: root
-
-    margins.top: -40
 
     aboveWindows: false
     anchors {
@@ -20,22 +19,18 @@ PanelWindow {
 
     color: "transparent"
 
-    // animated halftone
-    CustomShaderBackground {}
-
     Widgets.Greet {}
 
-    TopLeftInfo.Logos {}
+    ColumnLayout {
+        x: Theme.s(46)
+        y: Theme.s(80) - Config.barHeight // 40 being the top bar height
+        spacing: Theme.s(18.7)
+
+        TopLeftInfo.Logos { id: logos }
+        Slates { id: slates }
+    }
+
     Widgets.Clock {}
 
-    Slates {}
 
-    UserSlate.User {}
-
-    Video {
-        id: video
-        width : 800
-        height : 600
-        source: Quickshell.shellPath("assets/bg/animald00ds.mov")
-    }
 }

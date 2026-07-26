@@ -2,14 +2,15 @@ import QtQuick
 import QtQuick.Window
 import Quickshell
 import Qt5Compat.GraphicalEffects
+import "../../common"
 
 // TODO: this code sucks refactor it sometime
 
 Item {
     id: root
 
-    width: 40
-    height: 40
+    width: Theme.s(43)
+    height: Theme.s(43)
 
     Rectangle {
         id: borderMask

@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import "../common"
 
 PanelWindow {
     id: root
@@ -13,7 +14,7 @@ PanelWindow {
 
     color: "transparent"
 
-    implicitHeight: 35
+    implicitHeight: Config.barHeight
 
     RowLayout {
         id: rootLayout

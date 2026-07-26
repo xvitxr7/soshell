@@ -1,61 +1,81 @@
 import QtQuick
 import Quickshell
+import "../common"
+import "user-slate" as UserSlate
 
 Item {
     id: root
 
     Slate {
-        x: 42
-        y: 291
+        id: slate1
+
+        UserSlate.User {}
+
+        x: 0
+        y: 0
 
         slateId: 2
     }
 
     Slate {
-        x: 42
-        y: 471
+        id: slate2
+
+        x: 0
+        y: Theme.s(179.94)
 
         slateId: 8
     }
 
     Slate {
-        x: 42
-        y: 622
+        id: slate3
+
+        x: 0
+        y: Theme.s(331.23)
 
         slateId: 7
     }
 
     Slate {
-        x: 248
-        y: 622
+        id: slate4
+
+        x:Theme.s(205.8)
+        y: slate3.y
 
         slateId: 6
     }
 
     Slate {
-        x: 1076
-        y: 177
+        id: slate5
+
+        x: Theme.s(1034)
+        y: Theme.s(-114.2)
 
         slateId: 1
     }
 
     Slate {
-        x: 1594
-        y: 177
+        id: slate6
+
+        x: Theme.s(1551.4)
+        y: slate5.y
 
         slateId: 3
     }
 
     Slate {
-        x: 1076
-        y: 622
+        id: slate7
+
+        x: slate5.x
+        y: slate3.y
 
         slateId: 4
     }
 
     Slate {
-        x: 1592
-        y: 622
+        id: slate8
+
+        x: slate6.x
+        y: slate7.y
 
         slateId: 5
     }

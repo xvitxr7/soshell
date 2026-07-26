@@ -2,17 +2,19 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
+import "../../common"
 
 Item {
     id: root
 
     x: parent.width / 2 - width / 2
+    y: Theme.s(114)
 
     width: rootLayout.width
     height: rootLayout.height
 
     Timer {
-        interval: 5000
+        interval: 10000
         running: true
         repeat: false
 
@@ -28,11 +30,11 @@ Item {
 
         opacity: 1
         Behavior on opacity {
-            NumberAnimation { duration: 1000 }
+            NumberAnimation { duration: 2000 }
         }
 
         x: parent.width / 2 - rootLayout.width / 2
-        y: 114
+        y: 0
 
         Text {
             Layout.alignment: Qt.AlignHCenter
@@ -99,7 +101,7 @@ Item {
             Component.onCompleted: greets = greetOnTimeOfDay()
 
             text: applyFormat(greets[Math.floor(Math.random() * (greets.length - 1))])
-            font.pointSize: 40
+            font.pointSize: Screen.width * 0.02
             font.family: "Adwaita Sans"
             font.weight: 500
             renderType: Text.NativeRendering

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
-import "../common" as Common
+import "../common"
 
 Item {
     id: root
@@ -44,11 +44,11 @@ Item {
                 onExited: tooltip.hide()
             }
 
-            Common.Tooltip {
+            Tooltip {
                 id: tooltip
                 x: 1060
-                width: 300
-                height: 40
+                implicitWidth: 300
+                implicitHeight: 40
                 bgColor: "#263754"
                 Text {
                     x: parent.width / 2 - width / 2

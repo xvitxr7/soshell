@@ -1,12 +1,13 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import "../../common"
 
 Item {
     id: root
 
-    x: 74
-    y: 313
+    x: 32.18
+    y: 21.27
 
     width: rootLayout.width
     height: rootLayout.height
@@ -14,20 +15,22 @@ Item {
     RowLayout {
         id: rootLayout
 
-        ProfilePicture {}
+        ProfilePicture {
+            id: pfp
+        }
 
         Text {
             id: userName
-            Layout.topMargin: -8
-            
+            Layout.alignment: Qt.AlignTop
+
             text: Quickshell.env("USER")
 
             font.family: "Medium"
-            font.pointSize: 30
+            font.pointSize: Theme.s(36)
             color: "#9ba9cf"
 
             transform: Scale {
-                yScale: 40 / userName.height
+                yScale: pfp.height / userName.height; xScale: (userName.width * 1.4) / userName.width
             }
         }
     }

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
-import "../../../"
+import "../../../common"
 
 Item {
     id: root
@@ -14,7 +14,9 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-	spacing: 3
+        spacing: 3
+
+        property real fontSize: Theme.s(7)
 
         Text {
             Process {
@@ -36,11 +38,11 @@ Item {
             }
 
             text: uptimeProcess.result.toUpperCase().trim() // slice to remove random comma
-            font.pointSize: 7
+            font.pointSize: rootLayout.fontSize
             font.family: "MartianMono Nerd Font"
             color: "white"
             renderType: Text.NativeRendering
-            
+
         }
 
         Text {
@@ -55,7 +57,7 @@ Item {
             }
 
             text: "POWERED_BY QSHELL_" + versionProcess.result.split(" ")[1]
-            font.pointSize: 7
+            font.pointSize: rootLayout.fontSize
             font.family: "MartianMono Nerd Font"
             color: "white"
             renderType: Text.NativeRendering
@@ -63,7 +65,7 @@ Item {
 
         Text {
             text: "USING SOSHELL_" + Config.shellVersion + "a"
-            font.pointSize: 7
+            font.pointSize: rootLayout.fontSize
             font.family: "MartianMono Nerd Font"
             color: "white"
             renderType: Text.NativeRendering
@@ -71,7 +73,7 @@ Item {
 
         Text {
             text: "USING DUSQKRNL_7.3.0b"
-            font.pointSize: 7
+            font.pointSize: rootLayout.fontSize
             font.family: "MartianMono Nerd Font"
             color: "white"
             renderType: Text.NativeRendering
