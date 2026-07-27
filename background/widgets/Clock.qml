@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import "../../common"
 
+// TODO: why is this a panel?
 PanelWindow {
     id: root
 
@@ -25,32 +26,27 @@ PanelWindow {
     ColumnLayout {
         id: rootLayout
         spacing: -4
+        width: parent.width
 
         Text {
             id: time
             text: Qt.formatDateTime(sysClock.date, "hh•mm•ss")
+            Layout.alignment: Qt.AlignHCenter
             font.pointSize: Theme.s(40)
             font.family: "Medium"
 
             color: "white"
-
-            transform: Scale {
-                xScale: root.width / time.width
-            }
         }
 
         Text {
             id: date
             text: Qt.formatDateTime(sysClock.date, "dddd dd MMMM")
+            Layout.alignment: Qt.AlignHCenter
             font.family: Fonts.medium.font.family
             font.pointSize: 13
             renderType: Text.CurveRendering
 
             color: "white"
-
-            transform: Scale {
-                xScale: root.width / date.width
-            }
         }
     }
 }
