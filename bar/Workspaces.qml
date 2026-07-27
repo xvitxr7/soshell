@@ -7,8 +7,8 @@ import "../common"
 Item {
     id: root
 
-    width: bg.width
-    height: Theme.s(30)
+    implicitWidth: bg.width
+    implicitHeight: Theme.s(30)
 
     Rectangle {
         id: bg
