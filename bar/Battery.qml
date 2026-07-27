@@ -9,8 +9,12 @@ import "../common"
 Rectangle {
     id: root
 
-    width: rootLayout.width + Theme.s(25)
-    height: Theme.s(30)
+    implicitWidth: rootLayout.width + Theme.s(25)
+    Behavior on implicitWidth {
+        NumberAnimation { duration: 250; easing: Easing.InOutCubic }
+    }
+
+    implicitHeight: Theme.s(30)
 
     radius: 5
 
@@ -22,6 +26,8 @@ Rectangle {
         spacing: Theme.s(3)
 
         Image {
+            id: batteryIcon
+
             function getIcon(charging: bool, charge: int): string {
                 if (charging) return Theme.asset("bar/battery_charging.svg")
 
@@ -39,12 +45,43 @@ Rectangle {
         }
 
         Text {
-            text: root.battery.percentage * 100 + "%"
+            id: batteryChargeText
+
+            function getTimeRemaining(): string {
+                if (root.battery.state == UPowerDeviceState.Charging)
+                    if (root.battery.timeToFull == 0)
+                        return "Calculating time remaining..."
+                    else
+                        return Math.round(root.battery.timeToFull / 60) + " minutes until full"
+                else
+                    if (root.battery.timeToEmpty == 0)
+                        return "Calculating time remaining..."
+                    else
+                        return Math.round(root.battery.timeToEmpty / 60) + " minutes remaining"
+            }
+
+            text: mouse.containsMouse ? getTimeRemaining() : Math.round(root.battery.percentage * 100) + "%"
             font.family: "MartianMono Nerd Font Propo"
             font.weight: 900
             font.pointSize: Theme.s(12.2)
+
             color: "#263754"
         }
 
+    }
+
+    SequentialAnimation {
+        id: hoverAnimation
+        NumberAnimation { target: batteryChargeText; property: "opacity"; to: 0; duration: 0 }
+        NumberAnimation { target: batteryChargeText; property: "opacity"; to: 1; duration: 600 }
+    }
+
+    MouseArea {
+        id: mouse
+        anchors.fill: parent
+        hoverEnabled: true
+
+        onEntered: hoverAnimation.start()
+        onExited: hoverAnimation.start()
     }
 }
