@@ -9,7 +9,7 @@ import "../common"
 Rectangle {
     id: root
 
-    width: Theme.s(80)
+    width: rootLayout.width + Theme.s(25)
     height: Theme.s(30)
 
     radius: 5

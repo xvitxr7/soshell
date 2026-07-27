@@ -20,6 +20,7 @@ PanelWindow {
         id: rootLayout
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
+        spacing: Theme.s(10)
 
         Workspaces {}
         Clock {}

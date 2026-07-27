@@ -13,5 +13,5 @@ Item {
 
     readonly property bool hasBattery: UPower.devices.values.length > 0
 
-    property real barHeight: Screen.height * 0.04 // 4% of the screen only
+    property real barHeight: Theme.s(40) // 4% of the screen only
 }

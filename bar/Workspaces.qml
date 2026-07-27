@@ -15,7 +15,7 @@ Item {
 
         radius: 5
 
-        width: rootLayout.width + 20
+        width: rootLayout.width + Theme.s(30)
         height: parent.height
     }
 
