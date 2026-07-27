@@ -35,7 +35,7 @@ Rectangle {
             Layout.preferredWidth: Theme.s(9.3)
             Layout.preferredHeight: Theme.s(15)
 
-            source: getIcon(root.battery.state == UPowerDeviceState.Charging, root.battery.percentage)
+            source: getIcon(root.battery.state == UPowerDeviceState.Charging, root.battery.percentage * 100)
         }
 
         Text {
