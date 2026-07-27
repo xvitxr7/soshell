@@ -48,6 +48,8 @@ Rectangle {
             id: batteryChargeText
 
             function getTimeRemaining(): string {
+                if (root.battery.percentage == 1)
+                    return "Battery full, enjoy!"
                 if (root.battery.state == UPowerDeviceState.Charging)
                     if (root.battery.timeToFull == 0)
                         return "Calculating time remaining..."
