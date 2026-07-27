@@ -14,7 +14,7 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-        spacing: Theme.s(2)
+        spacing: Theme.s(4)
 
         property real fontSize: Theme.s(7)
 
