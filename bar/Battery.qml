@@ -12,7 +12,7 @@ Rectangle {
     width: Theme.s(80)
     height: Theme.s(30)
 
-    radius: Theme.s(8)
+    radius: 5
 
     property var battery: UPower.devices.values[0]
 

@@ -14,11 +14,13 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-        spacing: Theme.s(4)
+        spacing: lineup1.height / uptimeProcess.height
 
         property real fontSize: Theme.s(7)
 
         Text {
+            id: uptimeText
+
             Process {
                 id: uptimeProcess
                 running: true

@@ -18,7 +18,7 @@ Item {
 
             implicitWidth: Theme.s(100)
             implicitHeight: root.height
-            radius: Theme.s(8)
+            radius: 5
 
             color: "#263754"
 
