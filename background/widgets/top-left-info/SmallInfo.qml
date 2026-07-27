@@ -14,7 +14,7 @@ Item {
 
     ColumnLayout {
         id: rootLayout
-        spacing: lineup1.height / uptimeProcess.height
+        spacing: Theme.s(4)
 
         property real fontSize: Theme.s(7)
 
