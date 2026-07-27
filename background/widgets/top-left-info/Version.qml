@@ -16,7 +16,7 @@ Item {
 
             text: "VERSION " + Config.version
             font.family: "Medium"
-            font.pointSize: Theme.s(14.7)
+            font.pointSize: Theme.s(14.3)
             color: "white"
             antialiasing: false
         }
