@@ -23,7 +23,7 @@ Rectangle {
     RowLayout {
         id: rootLayout
         anchors.centerIn: parent
-        spacing: Theme.s(3)
+        spacing: Theme.s(10)
 
         Image {
             id: batteryIcon
