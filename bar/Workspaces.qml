@@ -22,6 +22,9 @@ Item {
     RowLayout {
         id: rootLayout
         anchors.centerIn: parent
+        spacing: Theme.s(8)
+
+
         Repeater {
             model: 10
 
