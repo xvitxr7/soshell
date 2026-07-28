@@ -54,12 +54,12 @@ Rectangle {
                     if (root.battery.timeToFull == 0)
                         return "Calculating time remaining..."
                     else
-                        return Math.round(root.battery.timeToFull / 60) + " minutes until full (" + root.battery.changeRate + " W)"
+                        return Math.round(root.battery.timeToFull / 60) + " minutes until full (" + Math.round(root.battery.changeRate * 100) / 100 + " W)"
                 else
                     if (root.battery.timeToEmpty == 0)
                         return "Calculating time remaining..."
                     else
-                        return Math.round(root.battery.timeToEmpty / 60) + " minutes remaining (-" + root.battery.changeRate + " W)"
+                        return Math.round(root.battery.timeToEmpty / 60) + " minutes remaining (-" + Math.round(root.battery.changeRate * 100) / 100 + " W)"
             }
 
             text: mouse.containsMouse ? getTimeRemaining() : Math.round(root.battery.percentage * 100) + "%"
