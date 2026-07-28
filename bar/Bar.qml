@@ -30,6 +30,6 @@ PanelWindow {
             source: Config.hasBattery ? "Battery.qml" : null
         }
 
-	Audio {}
+        Audio {}
     }
 }
