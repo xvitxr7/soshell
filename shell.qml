@@ -6,9 +6,7 @@ import "bar" as Bar
 ShellRoot {
     id: shellRoot
 
-    // background halftone animation
     Background.Background {}
-
     Bar.Bar {}
 
 }
