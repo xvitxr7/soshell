@@ -29,5 +29,7 @@ PanelWindow {
             id: batteryIslandLoader
             source: Config.hasBattery ? "Battery.qml" : null
         }
+
+	Audio {}
     }
 }
