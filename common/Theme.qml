@@ -7,6 +7,7 @@ QtObject {
     readonly property real designScale: 1080
     readonly property real currentScale: Screen.height / designScale
 
+    // scale values with the monitor height, to mainting vertical pixel accuracy
     function s(value: real): real {
         return Math.round(value * currentScale)
     }
