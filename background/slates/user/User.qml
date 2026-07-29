@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import "../../common"
+
+import qs.common
 
 Item {
     id: root
