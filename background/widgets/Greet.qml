@@ -2,7 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
-import "../../common"
+
+import qs.common
 
 Item {
     id: root
@@ -21,7 +22,6 @@ Item {
         onTriggered: rootLayout.opacity = 0
     }
 
-    // disable make the whole thing onec it disappears
     visible: rootLayout.opacity > 0
 
     ColumnLayout {

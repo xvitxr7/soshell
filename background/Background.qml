@@ -2,9 +2,10 @@ import QtQuick
 import QtQuick.Layouts
 import QtMultimedia
 import Quickshell
-import "widgets" as Widgets
-import "widgets/top-left-info" as TopLeftInfo
-import "../common"
+
+import qs.common
+import qs.background.widgets as Widgets
+import qs.background.widgets.info as InfoWidgets
 
 PanelWindow {
     id: root
@@ -19,14 +20,17 @@ PanelWindow {
 
     color: "transparent"
 
-    Widgets.Greet {}
+    LazyLoader {
+        loading: true
+        Widgets.Greet {}
+    }
 
     ColumnLayout {
         x: Theme.s(46)
         y: Theme.s(80) - Config.barHeight // 40 being the top bar height
         spacing: Theme.s(18.7)
 
-        TopLeftInfo.Logos { id: logos }
+        InfoWidgets.Logos { id: logos }
         Slates { id: slates }
     }
 

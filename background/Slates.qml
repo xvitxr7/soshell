@@ -1,7 +1,8 @@
 import QtQuick
 import Quickshell
-import "../common"
-import "user-slate" as UserSlate
+
+import qs.common
+import qs.background.slates.user as UserSlate
 
 Item {
     id: root

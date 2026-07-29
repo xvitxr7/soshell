@@ -1,12 +1,12 @@
 import QtQuick
 import Quickshell
-import "background" as Background
-import "bar" as Bar
+import qs.bar
+import qs.background
 
 ShellRoot {
     id: shellRoot
 
-    Background.Background {}
-    Bar.Bar {}
+    Background {}
+    Bar {}
 
 }
