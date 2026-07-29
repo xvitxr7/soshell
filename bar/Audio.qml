@@ -67,7 +67,22 @@ Item {
                 Text {
                     id: volumeText
 
-                    text: Math.round(root.defaultSink.audio.volume * 100) + "%"
+                    property int volumeDelta: sinkVolume - previousVolume
+                    property int previousVolume
+                    property int sinkVolume: Math.round(root.defaultSink.audio.volume * 100)
+
+                    text: sinkVolume + "%"
+                    Behavior on text {
+                        SequentialAnimation {
+                            PropertyAnimation { target: volumeText; property: "y"; to: !mouse.containsMouse ? (volumeText.volumeDelta > 0 ? -10 : 10) : 0; duration: 20 }
+                            PropertyAnimation { target: audioIcon; property: "y"; to: !mouse.containsMouse ? (volumeText.volumeDelta > 0 ? -10 : 10) : 0; duration: 20 }
+                            PropertyAnimation { target: volumeText; property: "y"; to: 0; duration: 20 }
+                            PropertyAnimation { target: audioIcon; property: "y"; to: 0; duration: 20 }
+                            PropertyAnimation { target: volumeText; property: "previousVolume"; to: volumeText.sinkVolume; duration: 0 }
+                        }
+
+                    }
+
                     font.family: "MartianMono Nerd Font Propo"
                     font.weight: 900
                     font.pointSize: Theme.s(12.2)
@@ -92,7 +107,9 @@ Item {
             id: mpris
             z: -1
 
-            Layout.preferredWidth: Mpris.players.values.length == 0 ? 0 : mprisRootLayout.width + Theme.s(25)
+            Layout.preferredWidth: Mpris.players.values.length != 0 ? mprisRootLayout.width + Theme.s(25) : 0
+            opacity: Mpris.players.values.length == 0 ? 0 : 1
+
             Behavior on Layout.preferredWidth {
                 NumberAnimation { duration: 250; easing: Easing.InOutCubic }
             }
@@ -116,6 +133,9 @@ Item {
                 Text {
                     text: mpris.trimTitle(root.player.trackTitle) || "Unknown Title"
 
+                    Layout.preferredWidth: width
+                    Layout.preferredHeight: height
+
                     font.family: "MartianMono Nerd Font Propo"
                     font.weight: 900
                     font.pointSize: Theme.s(12.2)
@@ -123,7 +143,7 @@ Item {
                 }
 
                 Rectangle {
-                    visible: mpris.Layout.preferredWidth > 0 && root.player.trackArtist.length > 0
+                    visible: mpris.visible && root.player.trackArtist.length > 0
 
                     Layout.preferredWidth: artistText.width + 5
                     Layout.preferredHeight: artistText.height + 5
