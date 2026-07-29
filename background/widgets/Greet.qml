@@ -8,36 +8,41 @@ import qs.common
 Item {
     id: root
 
-    x: parent.width / 2 - width / 2
+    anchors.horizontalCenter: rootBackgroundPanel.horizontalCenter
+
     y: Theme.s(70)
 
     width: rootLayout.width
     height: rootLayout.height
 
+    opacity: 1
+    Behavior on opacity {
+        NumberAnimation { duration: 2000 }
+    }
+
+    visible: opacity > 0
+
     Timer {
+        id: fadeOutTimer
+
         interval: 10000
         running: true
         repeat: false
 
-        onTriggered: rootLayout.opacity = 0
+        onTriggered: root.opacity = 0
     }
-
-    visible: rootLayout.opacity > 0
 
     ColumnLayout {
         id: rootLayout
         spacing: -6
 
-        opacity: 1
-        Behavior on opacity {
-            NumberAnimation { duration: 2000 }
-        }
+        opacity: parent.opacity
 
-        x: parent.width / 2 - rootLayout.width / 2
-        y: 0
+        anchors.centerIn: parent
 
         Text {
             Layout.alignment: Qt.AlignHCenter
+
             FileView {
                 id: messagesFile
                 path: Quickshell.shellPath("assets/txt/messages")
