@@ -74,8 +74,8 @@ Item {
                     text: sinkVolume + "%"
                     Behavior on text {
                         SequentialAnimation {
-                            PropertyAnimation { target: volumeText; property: "y"; to: !mouse.containsMouse ? (volumeText.volumeDelta > 0 ? -10 : 10) : 0; duration: 20 }
-                            PropertyAnimation { target: audioIcon; property: "y"; to: !mouse.containsMouse ? (volumeText.volumeDelta > 0 ? -10 : 10) : 0; duration: 20 }
+                            PropertyAnimation { target: volumeText; property: "y"; to: !mouse.containsMouse ? (volumeText.volumeDelta > 0 ? Theme.s(-5) : Theme.s(5)) : 0; duration: 20 }
+                            PropertyAnimation { target: audioIcon; property: "y"; to: !mouse.containsMouse ? (volumeText.volumeDelta > 0 ? Theme.s(-5) : Theme.s(5)) : 0; duration: 20 }
                             PropertyAnimation { target: volumeText; property: "y"; to: 0; duration: 20 }
                             PropertyAnimation { target: audioIcon; property: "y"; to: 0; duration: 20 }
                             PropertyAnimation { target: volumeText; property: "previousVolume"; to: volumeText.sinkVolume; duration: 0 }
