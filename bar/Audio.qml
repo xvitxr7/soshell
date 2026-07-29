@@ -7,6 +7,7 @@ import Quickshell.Hyprland
 import QtQuick.Effects
 import Quickshell.Services.Pipewire
 import Quickshell.Services.Mpris
+import Quickshell.Widgets
 import "../common"
 
 Item {
@@ -164,12 +165,12 @@ Item {
                     }
                 }
 
-                Image {
+                IconImage {
                     Layout.preferredWidth: 50
                     Layout.preferredHeight: 50
                     Layout.bottomMargin: -10
 
-                    source: Quickshell.iconPath(root.player.desktopEntry, "")
+                    source: Quickshell.iconPath(root.player.desktopEntry, true)
 
                     MultiEffect {
                         source: parent
