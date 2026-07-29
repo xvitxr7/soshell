@@ -171,16 +171,6 @@ Item {
                     Layout.bottomMargin: -10
 
                     source: Quickshell.iconPath(DesktopEntries.heuristicLookup(root.player.desktopEntry).icon, true)
-<<<<<<< Updated upstream
-
-                    MultiEffect {
-                        source: parent
-                        anchors.fill: parent
-                        saturation: -1.0
-                        contrast: 0.7
-                    }
-=======
->>>>>>> Stashed changes
                 }
             }
         }
