@@ -8,7 +8,7 @@ import qs.background.widgets as Widgets
 import qs.background.widgets.info as InfoWidgets
 
 PanelWindow {
-    id: root
+    id: rootBackgroundPanel
 
     aboveWindows: false
     anchors {
