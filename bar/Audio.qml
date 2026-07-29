@@ -122,7 +122,7 @@ Item {
 
             function trimTitle(title: string): string {
                 if (title.length > 20)
-                    title = title.slice(0, 20) + "..."
+                    title = title.slice(0, 20).trim() + "..."
                 return title
             }
 
