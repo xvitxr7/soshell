@@ -169,7 +169,7 @@ Item {
                     Layout.preferredHeight: 50
                     Layout.bottomMargin: -10
 
-                    source: Quickshell.iconPath(root.player.desktopEntry)
+                    source: Quickshell.iconPath(root.player.desktopEntry, "")
 
                     MultiEffect {
                         source: parent
