@@ -24,12 +24,11 @@ PanelWindow {
 
         Workspaces {}
         Clock {}
+        Audio {}
 
         Loader {
             id: batteryIslandLoader
             source: Config.hasBattery ? "Battery.qml" : null
         }
-
-        Audio {}
     }
 }
