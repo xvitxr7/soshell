@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 
 import qs.common.services
+import qs.common
 
 PanelWindow {
     id: root
