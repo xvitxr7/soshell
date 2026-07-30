@@ -2,13 +2,11 @@ import QtQuick
 import QtQml
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Io
-import Quickshell.Hyprland
-import QtQuick.Effects
 import Quickshell.Services.Pipewire
 import Quickshell.Services.Mpris
 import Quickshell.Widgets
-import "../common"
+
+import qs.common
 
 Item {
     id: root

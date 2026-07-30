@@ -10,13 +10,11 @@ Rectangle {
     id: root
 
     implicitWidth: rootLayout.width + Theme.s(25)
+    implicitHeight: Theme.s(30)
+    radius: 5
     Behavior on implicitWidth {
         NumberAnimation { duration: 250; easing: Easing.InOutCubic }
     }
-
-    implicitHeight: Theme.s(30)
-
-    radius: 5
 
     property var battery: UPower.devices.values[0]
 
