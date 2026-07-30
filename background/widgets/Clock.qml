@@ -5,21 +5,14 @@ import Quickshell
 import qs.common
 import qs.common.services
 
-// TODO: why is this a panel?
-PanelWindow {
+Item {
     id: root
 
-    anchors.top: true
-    anchors.left: true
-
-    margins.left: Theme.s(1440)
-    margins.top: Theme.s(70) - Config.barHeight
+    x: Theme.s(1440)
+    y: Theme.s(70) - Config.barHeight
 
     width: Theme.s(370)
     height: rootLayout.height
-
-    aboveWindows: false
-    color: "transparent"
 
     SystemClock {
         id: sysClock
