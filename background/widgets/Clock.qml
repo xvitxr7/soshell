@@ -1,7 +1,9 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import "../../common"
+
+import qs.common
+import qs.common.services
 
 // TODO: why is this a panel?
 PanelWindow {
@@ -42,7 +44,7 @@ PanelWindow {
             id: date
             text: Qt.formatDateTime(sysClock.date, "dddd dd MMMM")
             Layout.alignment: Qt.AlignHCenter
-            font.family: Fonts.medium.font.family
+            font.family: FontService.medium.font.family
             font.pointSize: 13
             renderType: Text.CurveRendering
 
