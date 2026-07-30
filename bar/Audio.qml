@@ -61,7 +61,7 @@ Item {
                             return "bar/audio_high.svg"
                     }
 
-                    source: Theme.asset(getIcon())
+                    source: Paths.assets(getIcon())
                 }
 
                 Text {

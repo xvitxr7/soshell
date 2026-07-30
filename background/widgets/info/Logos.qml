@@ -2,7 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
-import "../../../common"
+
+import qs.common
 
 Item {
     id: root
@@ -56,7 +57,7 @@ Item {
             id: logo
             Layout.preferredWidth: Theme.s(530)
             Layout.preferredHeight: Theme.s(87)
-            source: Quickshell.shellPath("assets/bg/sos_logo.svg")
+            source: Paths.assets("bg/sos_logo.svg")
         }
 
         Version {
@@ -72,7 +73,7 @@ Item {
                 Layout.preferredWidth: Theme.s(228.7)
                 Layout.preferredHeight: Theme.s(67)
 
-                source: Quickshell.shellPath("assets/bg/third_party_lineup1.svg")
+                source: Paths.assets("bg/third_party_lineup1.svg")
             }
 
             SmallInfo {}
@@ -82,7 +83,7 @@ Item {
                 Layout.preferredHeight: Theme.s(20)
                 Layout.alignment: Qt.AlignBottom
 
-                source: Quickshell.shellPath("assets/bg/third_party_lineup2.svg")
+                source: Paths.assets("bg/third_party_lineup2.svg")
             }
         }
     }

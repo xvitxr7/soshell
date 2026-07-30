@@ -29,13 +29,13 @@ Rectangle {
             id: batteryIcon
 
             function getIcon(charging: bool, charge: int): string {
-                if (charging) return Theme.asset("bar/battery_charging.svg")
+                if (charging) return Paths.assets("bar/battery_charging.svg")
 
-                if      (charge == 0)                return Theme.asset("bar/battery_empty.svg")
-                else if (charge >= 0 && charge < 30)  return Theme.asset("bar/battery_25.svg")
-                else if (charge >= 30 && charge < 60) return Theme.asset("bar/battery_50.svg")
-                else if (charge >= 60 && charge < 80) return Theme.asset("bar/battery_75.svg")
-                else if (charge >= 80)                return Theme.asset("bar/battery_full.svg")
+                if      (charge == 0)                return Paths.assets("bar/battery_empty.svg")
+                else if (charge >= 0 && charge < 30)  return Paths.assets("bar/battery_25.svg")
+                else if (charge >= 30 && charge < 60) return Paths.assets("bar/battery_50.svg")
+                else if (charge >= 60 && charge < 80) return Paths.assets("bar/battery_75.svg")
+                else if (charge >= 80)                return Paths.assets("bar/battery_full.svg")
             }
 
             Layout.preferredWidth: Theme.s(9.3)
