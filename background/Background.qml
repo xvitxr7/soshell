@@ -20,9 +20,18 @@ PanelWindow {
 
     color: "transparent"
 
-    LazyLoader {
-        loading: true
-        Widgets.Greet {}
+    Loader {
+        id: greetWidgetLoader
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        sourceComponent: Widgets.Greet {
+            id: greetWidget
+        }
+
+        Connections {
+            target: greetWidgetLoader.item
+            function onDisappear() { greetWidgetLoader.sourceComponent = undefined; console.log("Background: GreetWidget Unloaded!") }
+        }
     }
 
     ColumnLayout {

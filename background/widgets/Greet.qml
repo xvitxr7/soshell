@@ -8,19 +8,24 @@ import qs.common
 Item {
     id: root
 
-    anchors.horizontalCenter: rootBackgroundPanel.horizontalCenter
-
     y: Theme.s(70)
 
     width: rootLayout.width
     height: rootLayout.height
 
+    // fade out logic
+    signal disappear()
     opacity: 1
-    Behavior on opacity {
-        NumberAnimation { duration: 2000 }
-    }
 
-    visible: opacity > 0
+    NumberAnimation on opacity {
+        running: false
+        id: fadeOut
+        to: 0;
+        duration: 2000;
+        easing.type: Easing.Linear
+
+        onFinished: root.disappear()
+    }
 
     Timer {
         id: fadeOutTimer
@@ -29,7 +34,7 @@ Item {
         running: true
         repeat: false
 
-        onTriggered: root.opacity = 0
+        onTriggered: fadeOut.start()
     }
 
     ColumnLayout {
