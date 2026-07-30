@@ -71,47 +71,34 @@ Item {
                 id: clock
             }
 
-            FileView {
-                id: greetMessagesFile
-                property list<string> lines: text().split("\n")
-                path: Quickshell.shellPath("assets/txt/greets")
-                blockLoading: true
+            RandomMessage {
+                id: greets
+                fileName: "greets"
             }
 
-            FileView {
-                id: greetEveningFile
-                property list<string> lines: text().split("\n")
-                path: Quickshell.shellPath("assets/txt/greets_evening")
-                blockLoading: true
+            RandomMessage {
+                id: eveningGreets
+                fileName: "greets_evening"
             }
 
-            FileView {
-                id: greetMorningFile
-                property list<string> lines: text().split("\n")
-                path: Quickshell.shellPath("assets/txt/greets_morning")
-                blockLoading: true
+            RandomMessage {
+                id: morningGreets
+                fileName: "greets_morning"
             }
 
-            function applyFormat(str) {
-                return str.replace("USER", Quickshell.env("USER"))
-            }
-
-            function greetOnTimeOfDay() {
+            function greetOnTimeOfDay(): string {
                 const r = Math.random()
                 if (r > 0.5) {
                     if (clock.hours > 0 && clock.hours < 13)
-                        return greetMorningFile.lines
+                        return morningGreets.randomMessage()
                     else if (clock.hours > 12 && clock.hours <= 23)
-                        return greetEveningFile.lines
+                        return morningGreets.randomMessage()
                 }
 
-                return greetMessagesFile.lines
+                return greets.randomMessage()
             }
 
-            property var greets;
-            Component.onCompleted: greets = greetOnTimeOfDay()
-
-            text: applyFormat(greets[Math.floor(Math.random() * (greets.length - 1))])
+            text: greetOnTimeOfDay()
             font.pointSize: Theme.s(50)
             font.family: "Adwaita Sans"
             font.weight: 500
