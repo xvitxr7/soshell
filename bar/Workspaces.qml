@@ -35,6 +35,10 @@ Rectangle {
                     NumberAnimation { duration: 150; easing.type: Easing.InOutQuad }
                 }
 
+                Behavior on implicitHeight {
+                    NumberAnimation { duration: 150; easing.type: Easing.InOutQuad }
+                }
+
                 color: !isOccupied ? "transparent" : "#263754"
                 Behavior on color {
                     ColorAnimation { duration: 150; easing.type: Easing.InOutQuad }
