@@ -45,7 +45,7 @@ Rectangle {
                     anchors.fill: parent
                     anchors.centerIn: parent
 
-                    source: Quickshell.shellPath("assets/bar/workspace_unoccupied.svg")
+                    source: Paths.assets("bar/workspace_unoccupied.svg")
                 }
 
                 Text {
