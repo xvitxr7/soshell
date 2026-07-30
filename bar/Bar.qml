@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import "../common"
+
+import qs.common.services
 
 PanelWindow {
     id: root
@@ -28,7 +29,7 @@ PanelWindow {
 
         Loader {
             id: batteryIslandLoader
-            source: Config.hasBattery ? "Battery.qml" : null
+            source: UPowerService.hasBattery ? "Battery.qml" : ""
         }
     }
 }

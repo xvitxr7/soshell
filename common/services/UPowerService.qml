@@ -1,6 +1,6 @@
 pragma Singleton
 
-import Quickshell.UPower
+import Quickshell.Services.UPower
 import QtQuick
 
 QtObject {
