@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Io
 
 import qs.common
+import qs.common.services
 
 Item {
     id: root
@@ -48,18 +49,13 @@ Item {
         Text {
             Layout.alignment: Qt.AlignHCenter
 
-            FileView {
-                id: messagesFile
-                path: Quickshell.shellPath("assets/txt/messages")
-                blockLoading: true
+            RandomMessage {
+                id: greetMessages
+                fileName: "messages"
             }
 
-            property list<string> messages: messagesFile.text().split("\n")
-
-            id: randomMessage
-
-            text: messages[Math.floor(Math.random() * (messages.length - 1))]
-            font.family: Fonts.inter.font.family
+            text: greetMessages.randomMessage()
+            font.family: FontService.inter.font.family
             font.pointSize: Theme.s(16)
             color: "white"
         }
