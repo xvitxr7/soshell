@@ -2,9 +2,8 @@ import QtQuick
 import QtQuick.Window
 import Quickshell
 import Qt5Compat.GraphicalEffects
-import "../../common"
 
-// TODO: this code sucks refactor it sometime
+import qs.common
 
 Item {
     id: root
@@ -12,34 +11,22 @@ Item {
     width: Theme.s(43)
     height: Theme.s(43)
 
-    Rectangle {
-        id: borderMask
-        anchors.fill: parent
+    Image {
+        width: parent.width
+        height: parent.height
 
-        radius: 5
+        source: Quickshell.env("HOME") + "/.face"
+        sourceSize.width: width
 
-        color: "transparent"
+        fillMode: Image.PreserveAspectCrop
 
         layer.enabled: true
         layer.effect: OpacityMask {
             maskSource: Rectangle {
-                width:  borderMask.width
-                height: borderMask.height
-                radius: borderMask.radius
+                width:  root.width
+                height: root.height
+                radius: Theme.s(5)
             }
-        }
-
-        Image {
-            width: parent.width
-            height: parent.height
-
-            source: Quickshell.env("HOME") + "/.face"
-            sourceSize.width: width * Screen.devicePixelRatio
-
-            cache: false
-            antialiasing: true
-            asynchronous: true
-            fillMode: Image.PreserveAspectCrop
         }
     }
 
@@ -47,10 +34,10 @@ Item {
         id: borders
         anchors.fill: parent
 
-        radius: 5
+        radius: Theme.s(5)
 
         border.color: "#9ba9cf"
-        border.width: 2
+        border.width: Theme.s(3)
 
         color: "transparent"
     }
