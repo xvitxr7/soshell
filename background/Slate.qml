@@ -1,7 +1,7 @@
 import Quickshell
 import QtQuick
 
-import "../common"
+import qs.common
 
 Image {
     id: root
