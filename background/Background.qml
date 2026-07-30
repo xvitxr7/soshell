@@ -36,7 +36,7 @@ PanelWindow {
 
     ColumnLayout {
         x: Theme.s(46)
-        y: Theme.s(80) - Config.barHeight // 40 being the top bar height
+        y: Theme.s(80) - Config.barHeight
         spacing: Theme.s(18.7)
 
         InfoWidgets.Logos { id: logos }
