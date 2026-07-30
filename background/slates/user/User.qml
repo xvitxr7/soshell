@@ -7,6 +7,7 @@ import qs.common
 Item {
     id: root
 
+    // no scaling needed since these positions are relative
     x: 32.18
     y: 21.27
 
@@ -31,7 +32,7 @@ Item {
             color: "#9ba9cf"
 
             transform: Scale {
-                yScale: pfp.height / userName.height; xScale: (userName.width * 1.4) / userName.width
+                yScale: pfp.height / userName.height; xScale: (userName.width + 40) / userName.width
             }
         }
     }
