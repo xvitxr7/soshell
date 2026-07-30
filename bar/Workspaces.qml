@@ -4,20 +4,12 @@ import Quickshell
 import Quickshell.Hyprland
 import "../common"
 
-Item {
+Rectangle {
     id: root
 
-    implicitWidth: bg.width
+    implicitWidth: rootLayout.width + Theme.s(30)
     implicitHeight: Theme.s(30)
-
-    Rectangle {
-        id: bg
-
-        radius: 5
-
-        width: rootLayout.width + Theme.s(30)
-        height: parent.height
-    }
+    radius: 5
 
     RowLayout {
         id: rootLayout
@@ -36,7 +28,7 @@ Item {
                 property bool isActive: mouse.containsMouse || (Hyprland.focusedWorkspace && Hyprland.focusedWorkspace.id === wsId)
                 property bool isOccupied: wsData !== undefined
 
-                implicitWidth: Theme.s(isActive ? 15 : 12)
+                implicitWidth:  Theme.s(isActive ? 15 : 12)
                 implicitHeight: Theme.s(isActive ? 15 : 12)
 
                 Behavior on implicitWidth {
